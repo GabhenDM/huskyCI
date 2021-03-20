@@ -1,22 +1,26 @@
 {
   "ignored_warnings": [
     {
-      "warning_type": "Cross-Site Request Forgery",
-      "warning_code": 116,
-      "fingerprint": "c8697fda60549ca065789e2ea74c94effecef88b2b5483bae17ddd62ece47194",
-      "check_name": "CSRFTokenForgeryCVE",
-      "message": "Rails 6.0.0 has a vulnerability that may allow CSRF token forgery. Upgrade to Rails 6.0.3.1 or patch",
-      "file": "Gemfile.lock",
-      "line": 113,
-      "link": "https://groups.google.com/g/rubyonrails-security/c/NOjKiGeXUgw",
-      "code": null,
+      "warning_type": "Command Injection",
+      "warning_code": 14,
+      "fingerprint": "b4725bb3764a3b1e792e2a48804c55e4ed8903f38fbc20b3247317d9a0be65cb",
+      "check_name": "Execute",
+      "message": "Possible command injection",
+      "file": "app/controllers/application_controller.rb",
+      "line": 4,
+      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+      "code": "system(\"ls #{options}\")",
       "render_path": null,
-      "location": null,
-      "user_input": null,
+      "location": {
+        "type": "method",
+        "class": "ApplicationController",
+        "method": "test"
+      },
+      "user_input": "options",
       "confidence": "Medium",
       "note": ""
     }
   ],
-  "updated": "2021-03-16 15:20:09 -0300",
+  "updated": "2021-03-20 20:39:03 -0300",
   "brakeman_version": "5.0.0"
 }
